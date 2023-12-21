@@ -1,0 +1,38 @@
+
+-- Tabela Clientes
+CREATE TABLE clientes (
+    cliente_id SERIAL PRIMARY KEY,
+    nome VARCHAR(50),
+    endereco VARCHAR(100),
+    telefone VARCHAR(15)
+);
+
+-- Tabela Animais
+CREATE TABLE animais (
+    animal_id SERIAL PRIMARY KEY,
+    nome VARCHAR(50),
+    especie VARCHAR(50),
+    cliente_id INT REFERENCES clientes(cliente_id)
+);
+
+-- Tabela Produtos
+CREATE TABLE produtos (
+    produto_id SERIAL PRIMARY KEY,
+    nome VARCHAR(50),
+    preco DECIMAL(10, 2)
+);
+
+-- Tabela Vendas
+CREATE TABLE vendas (
+    venda_id SERIAL PRIMARY KEY,
+    cliente_id INT REFERENCES clientes(cliente_id),
+    data_venda DATE,
+    total DECIMAL(10, 2)
+);
+
+CREATE TABLE Serviços (
+    serviço_id SERIAL PRIMARY KEY,
+    cliente_id INT REFERENCES clientes(cliente_id),
+    data_serviço DATE
+    
+);

@@ -1,0 +1,57 @@
+Entidades:
+
+1-Pet Shop: Armazena informações sobre o estabelecimento.
+2-Cliente: Armazena informações sobre o cliente.
+3-Serviços: Armazena informações sobre os tipos de serviços oferecidos no estabelecimento.
+4-Produto: Armazena informações sobre os produtos disponíveis para venda no estabelecimento.
+5-Animais: Armazena informações sobre o animal e o dono.
+
+ATRIBUTOS:
+
+Venda:
+ID_venda (Chave Primária)
+data
+Total
+
+Cliente:
+ID_Cliente (Chave Primária)
+Nome
+CPF
+Telefone
+Nome do Pet
+E-mail
+Endereço
+
+Serviços:
+ID_Serviços (Chave Primária)
+Tipo do serviço
+Data do serviço
+Horário do serviço
+
+Produtos:
+ID_Produto (Chave Primária)
+Nome
+ID_Fornecedor
+Contato (telefone, email) 
+Marca
+Preço
+
+RELACIONAMENTOS:
+
+Estabelecimento:
+Um estabelecimento está localizado em uma única localização (estado).
+Um estabelecimento pode ter vários produtos.
+Um estabelecimento pode ter vários clientes.
+
+
+Cliente:
+Um cliente pode ter vários pets ou apenas um pet.
+Um cliente pode solicitar um ou mais serviços.
+
+
+Serviços - Reserva:
+Um cliente pode solicitar um ou mais serviços.
+
+
+Produtos:
+Um tipo de produto pode ser comprado por vários clientes  
